@@ -1,11 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download, ChevronDown } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import professionalPhoto from '@/assets/professional-photo.jpg';
 
 const Home = () => {
-  const scrollToContent = () => {
-    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-  };
+  const navigate = useNavigate();
 
   const openResume = () => {
     // You can replace this with your actual resume URL
@@ -57,7 +56,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="btn-primary group"
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => navigate('/contact')}
               >
                 Get In Touch
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -92,16 +91,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button 
-            onClick={scrollToContent}
-            className="flex flex-col items-center space-y-2 text-foreground-muted hover:text-primary transition-colors group"
-          >
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-primary" />
-          </button>
-        </div>
       </div>
 
       {/* Background Elements */}

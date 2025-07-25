@@ -119,7 +119,7 @@ const Projects = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="glass-card p-4 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <div className="glass-card p-4 hover:scale-105 transition-transform duration-500">
                     <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center">
                       <span className="text-lg font-semibold opacity-75">Project Preview</span>
                     </div>
