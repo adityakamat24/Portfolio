@@ -17,19 +17,31 @@ const Home = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-6 pt-32 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left Side - Photo */}
+          {/* Left Side - Creative Photo */}
           <div className="relative fade-in">
             <div className="relative">
-              {/* Main photo with glassmorphism frame */}
-              <div className="glass-card p-8 relative overflow-hidden">
-                <img
-                  src={professionalPhoto}
-                  alt="Alex Chen"
-                  className="w-full h-auto rounded-xl object-cover shadow-2xl"
-                />
-                {/* Floating accent elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 blur-xl float" />
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-accent to-primary rounded-full opacity-15 blur-2xl float" style={{ animationDelay: '2s' }} />
+              {/* Creative hexagon photo with dynamic border */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-lg opacity-50 group-hover:opacity-75 transition-all duration-700 animate-pulse" />
+                <div 
+                  className="relative glass-card p-6 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500"
+                  style={{
+                    clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
+                  }}
+                >
+                  <img
+                    src={professionalPhoto}
+                    alt="Alex Chen"
+                    className="w-full h-auto object-cover shadow-2xl transform hover:scale-110 transition-transform duration-700"
+                    style={{
+                      clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
+                    }}
+                  />
+                </div>
+                {/* Dynamic floating elements */}
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/30 rounded-full blur-xl float animate-bounce" style={{ animationDelay: '0s' }} />
+                <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-accent/25 rounded-full blur-2xl float" style={{ animationDelay: '1.5s' }} />
+                <div className="absolute top-1/2 -right-4 w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 blur-lg float" style={{ animationDelay: '3s' }} />
               </div>
             </div>
           </div>
@@ -57,10 +69,12 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="btn-primary group"
-                onClick={() => window.location.href = '/contact'}
+                asChild
               >
-                Get In Touch
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <a href="/contact">
+                  Get In Touch
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               
               <Button 
@@ -92,15 +106,27 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Enhanced CTA Section */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button 
-            onClick={scrollToContent}
-            className="flex flex-col items-center space-y-2 text-foreground-muted hover:text-primary transition-colors group"
-          >
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-primary" />
-          </button>
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex space-x-4">
+              <a
+                href="/projects"
+                className="glass-card px-6 py-3 text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
+              >
+                <span className="mr-2">🚀</span>
+                View My Work
+              </a>
+              <a
+                href="/contact"
+                className="glass-card px-6 py-3 text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
+              >
+                <span className="mr-2">💬</span>
+                Let's Talk
+              </a>
+            </div>
+            <ChevronDown className="w-5 h-5 text-foreground-muted animate-bounce opacity-50" />
+          </div>
         </div>
       </div>
 
