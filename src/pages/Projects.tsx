@@ -119,11 +119,9 @@ const Projects = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="glass-card p-4 hover:scale-105 transition-transform duration-500">
-                    <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <span className="text-lg font-semibold opacity-75 relative z-10">Project Preview</span>
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  <div className="glass-card p-4 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center">
+                      <span className="text-lg font-semibold opacity-75">Project Preview</span>
                     </div>
                   </div>
                   {/* Floating elements */}
