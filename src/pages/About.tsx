@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Code, Palette, Database, Settings, Users, Lightbulb } from 'lucide-react';
+import { Server, BrainCircuit } from "lucide-react";
 
 const About = () => {
   const [selectedSkill, setSelectedSkill] = useState<any>(null);
@@ -10,29 +11,47 @@ const About = () => {
 
   const skills = {
     "Languages": [
-      { name: "JavaScript", level: "Expert", projects: ["E-commerce Platform", "Task Manager", "Portfolio Site"] },
-      { name: "TypeScript", level: "Advanced", projects: ["React Dashboard", "API Service"] },
-      { name: "Python", level: "Advanced", projects: ["Data Analytics Tool", "Web Scraper"] },
-      { name: "Java", level: "Intermediate", projects: ["Banking System", "Mobile App Backend"] },
-      { name: "SQL", level: "Advanced", projects: ["Database Design", "Analytics Platform"] }
+      { name: "Python", level: "Expert", projects: ["LLM Inference", "ScanAI", "FlashAttention Kernels"] },
+      { name: "JavaScript", level: "Advanced", projects: ["ScanAI Frontend", "Portfolio Site"] },
+      { name: "C++", level: "Advanced", projects: ["Unreal Engine Robot Simulation"] },
+      { name: "Java", level: "Intermediate", projects: ["Coursework", "Backend Practice Projects"] },
+      { name: "SQL", level: "Advanced", projects: ["Analytics Dashboards", "ETL for 10M+ Rows"] }
     ],
     "Frontend": [
-      { name: "React", level: "Expert", projects: ["SaaS Dashboard", "E-commerce Site", "Portfolio"] },
-      { name: "Next.js", level: "Advanced", projects: ["Blog Platform", "Marketing Site"] },
-      { name: "Tailwind CSS", level: "Expert", projects: ["Design System", "Multiple UIs"] },
-      { name: "Framer Motion", level: "Intermediate", projects: ["Animated Landing Page"] }
+      { name: "ReactJS", level: "Advanced", projects: ["ScanAI UI", "Portfolio Website"] },
+      { name: "Tailwind CSS", level: "Advanced", projects: ["Custom UI Components", "Real-time Feedback UI"] },
+      { name: "Firebase", level: "Intermediate", projects: ["Personal Projects", "Realtime Storage"] }
     ],
     "Backend": [
-      { name: "Node.js", level: "Advanced", projects: ["REST API", "Real-time Chat"] },
-      { name: "Express", level: "Advanced", projects: ["API Gateway", "Microservices"] },
-      { name: "PostgreSQL", level: "Advanced", projects: ["User Management", "Analytics DB"] },
-      { name: "MongoDB", level: "Intermediate", projects: ["Content Management", "Social App"] }
+      { name: "FastAPI", level: "Expert", projects: ["ScanAI Backend", "LLM REST Services"] },
+      { name: "Express.js", level: "Advanced", projects: ["ScanAI API Layer"] },
+      { name: "PostgreSQL", level: "Advanced", projects: ["User Data Services", "LLM Logs and Queries"] },
+      { name: "MongoDB", level: "Intermediate", projects: ["Label Storage", "Content Analysis"] },
+      { name: "Redis", level: "Intermediate", projects: ["Caching Layer", "Task Queues"] }
+    ],
+    "AI/ML": [
+      { name: "PyTorch", level: "Expert", projects: ["GPT-2 Scaling", "Transformer Training"] },
+      { name: "Transformers (HF)", level: "Advanced", projects: ["LLM Fine-Tuning", "Summarization Models"] },
+      { name: "ONNX Runtime", level: "Intermediate", projects: ["Quantized LLM Inference"] },
+      { name: "Quantization", level: "Advanced", projects: ["INT8 Model Deployment"] },
+      { name: "FlashAttention", level: "Advanced", projects: ["Custom Triton Kernels", "FSDP Training"] },
+      { name: "RAG", level: "Intermediate", projects: ["Knowledge-Retrieval Pipelines"] },
+      { name: "Triton", level: "Intermediate", projects: ["Fused Attention Kernels"] }
+    ],
+    "DevOps & Infra": [
+      { name: "Docker", level: "Advanced", projects: ["ScanAI Deployment", "LLM Microservices"] },
+      { name: "Git", level: "Expert", projects: ["All Projects"] },
+      { name: "AWS (EC2/S3)", level: "Intermediate", projects: ["Production Deployments"] },
+      { name: "Google Cloud (GCS)", level: "Intermediate", projects: ["Model Storage", "Pipeline Versions"] },
+      { name: "GitHub Actions", level: "Advanced", projects: ["CI/CD Pipelines"] },
+      { name: "Nginx", level: "Intermediate", projects: ["Reverse Proxy for ScanAI"] }
     ],
     "Tools": [
-      { name: "Git", level: "Expert", projects: ["All Projects"] },
-      { name: "Docker", level: "Intermediate", projects: ["Deployment Pipeline"] },
-      { name: "AWS", level: "Intermediate", projects: ["Cloud Infrastructure"] },
-      { name: "Figma", level: "Advanced", projects: ["UI/UX Design", "Design Systems"] }
+      { name: "Weights & Biases", level: "Advanced", projects: ["Model Training Monitoring"] },
+      { name: "MLflow", level: "Intermediate", projects: ["Experiment Tracking"] },
+      { name: "Power BI", level: "Intermediate", projects: ["Backend Metrics Dashboard"] },
+      { name: "Matplotlib / Seaborn", level: "Advanced", projects: ["Training Visualizations"] },
+      { name: "RStudio", level: "Intermediate", projects: ["Academic Data Projects"] }
     ]
   };
 
@@ -57,9 +76,7 @@ const About = () => {
             About <span className="text-gradient">Me</span>
           </h1>
           <p className="text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate full-stack developer who loves creating digital experiences 
-            that make a difference. With a background in both design and development, 
-            I bring a unique perspective to every project.
+            I’m an AI engineer and software developer who enjoys building things that work, from LLMs and optimization pipelines to full-stack products. With experience across machine learning, systems engineering, and UI design, I bring both technical depth and product thinking to every project I take on.
           </p>
         </div>
 
@@ -69,22 +86,16 @@ const About = () => {
             <h2 className="text-3xl font-bold">My Journey</h2>
             <div className="space-y-4 text-foreground-muted">
               <p>
-                My coding journey began during my computer science studies, where I discovered 
-                the perfect blend of logical problem-solving and creative expression. What started 
-                as curiosity about how websites work evolved into a passion for building 
-                meaningful digital solutions.
+                I didn't get into coding because I had some master plan - it just started with being curious about stuff. I wanted to figure out how software actually works, why these models can somehow "learn" things, and how you go from having an idea to building something that people can actually use.
               </p>
               <p>
-                Over the past 3 years, I've had the privilege of working on diverse projects, 
-                from startup MVPs to enterprise applications. Each project has taught me 
-                something new and reinforced my belief that great software is built at the 
-                intersection of functionality and user experience.
+                That curiosity kind of took off during my undergrad and honestly, it's turned into something I really love doing - building systems that are both smart and well put together.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new design trends, contributing 
-                to open-source projects, or experimenting with the latest web technologies. 
-                I believe in continuous learning and staying ahead of the curve in this 
-                ever-evolving field.
+                The last few years, I've been all over the place with projects. Full-stack apps, training and tweaking large language models, you name it. Working on something like ScanAI really taught me how to think about the whole picture - writing the backend stuff, getting AI models to run faster with CUDA, and making frontends that don't suck to use. The internships I've done have been huge too, showing me what engineering looks like when it's not just a side project.
+              </p>
+              <p>
+                These days I'm diving deep into AI work while also writing code that can handle real-world scale, and getting into good design. Not just making things look nice, but making them feel right when you're using them. I can move between optimizing models and building solid software pretty naturally - they're both just different ways of solving problems. And when I need a break from all the screen time, you'll probably find me behind a DJ setup just mixing tracks because it's fun.
               </p>
             </div>
           </div>
@@ -93,15 +104,10 @@ const About = () => {
             <h2 className="text-3xl font-bold">What Drives Me</h2>
             <div className="space-y-4 text-foreground-muted">
               <p>
-                I'm motivated by the impact technology can have on people's lives. Whether 
-                it's streamlining a business process, creating an engaging user experience, 
-                or solving a complex technical challenge, I find joy in building solutions 
-                that matter.
+                I'm just wired to go deep on things. When I see some new tech or come across an idea that grabs my attention, I can't just look at it and move on - I have to figure out how the hell it actually works. I'll tear it apart, read whatever I can get my hands on, mess around with it, and build stuff until it clicks. That's just how my brain works, and honestly, it's what gets me excited about this whole field.
               </p>
               <p>
-                My approach combines technical expertise with design thinking. I believe 
-                that beautiful code and beautiful interfaces go hand in hand. Every line 
-                of code should serve a purpose, and every pixel should have intention.
+                I hate staying on the surface of things. If I'm working with something - could be an AI model, some framework I haven't used before, or a system I need to understand - I want to know what's really going on underneath. I learn by getting my hands dirty, asking questions that probably annoy people, and actually building things with it. That's how I figure stuff out, and it's what keeps me interested in doing this work.
               </p>
             </div>
 
@@ -123,7 +129,7 @@ const About = () => {
         {/* Skills Section */}
         <div className="slide-up">
           <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-          
+
           <div className="space-y-8">
             {Object.entries(skills).map(([category, skillList], categoryIndex) => (
               <div key={category} className="glass-card p-8">
@@ -131,10 +137,12 @@ const About = () => {
                   {category === "Languages" && <Code className="w-6 h-6 text-primary mr-3" />}
                   {category === "Frontend" && <Palette className="w-6 h-6 text-primary mr-3" />}
                   {category === "Backend" && <Database className="w-6 h-6 text-primary mr-3" />}
+                  {category === "AI/ML" && <BrainCircuit className="w-6 h-6 text-primary mr-3" />}
+                  {category === "DevOps & Infra" && <Server className="w-6 h-6 text-primary mr-3" />}
                   {category === "Tools" && <Settings className="w-6 h-6 text-primary mr-3" />}
                   <h3 className="text-2xl font-semibold">{category}</h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-3">
                   {skillList.map((skill, index) => (
                     <Badge
@@ -152,6 +160,7 @@ const About = () => {
             ))}
           </div>
         </div>
+
 
         {/* Skill Modal */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>

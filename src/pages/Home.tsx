@@ -1,14 +1,19 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import professionalPhoto from '@/assets/professional-photo.jpg';
+import professionalPhoto from '@/assets/AdityaPic.png';
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const openResume = () => {
+  const openResume_AIML = () => {
     // You can replace this with your actual resume URL
-    window.open('/resume.pdf', '_blank');
+    window.open('/resume-aiml.pdf', '_blank');
+  };
+
+    const openResume_SDE = () => {
+    // You can replace this with your actual resume URL
+    window.open('/resume-sde.pdf', '_blank');
   };
 
   return (
@@ -23,7 +28,7 @@ const Home = () => {
               <div className="glass-card p-8 relative overflow-hidden">
                 <img
                   src={professionalPhoto}
-                  alt="Alex Chen"
+                  alt="Aditya Kamat"
                   className="w-full h-auto rounded-xl object-cover shadow-2xl"
                 />
                 {/* Floating accent elements */}
@@ -38,16 +43,15 @@ const Home = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Hi, I'm{' '}
-                <span className="text-gradient">Alex Chen</span>
+                <span className="text-gradient">Aditya Kamat</span>
               </h1>
               
               <h2 className="text-2xl lg:text-3xl text-foreground-muted font-light">
-                Full-Stack Developer & UI/UX Designer
+                AI Engineer & Software Developer
               </h2>
               
               <p className="text-lg text-foreground-muted leading-relaxed max-w-xl">
-                I craft beautiful, functional web experiences that solve real problems. 
-                Passionate about clean code, user-centered design, and bringing ideas to life.
+                I’m an AI engineer working on large language models, training pipelines, and optimization techniques like quantization and speculative decoding. I also build end-to-end software—APIs, full-stack apps, and systems that scale. 
               </p>
             </div>
 
@@ -66,26 +70,35 @@ const Home = () => {
                 variant="outline" 
                 size="lg" 
                 className="btn-glass group"
-                onClick={openResume}
+                onClick={openResume_AIML}
               >
                 <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                View Resume
+                View AIML Resume
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="btn-glass group"
+                onClick={openResume_SDE}
+              >
+                <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                View SDE Resume
               </Button>
             </div>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">50+</div>
+                <div className="text-3xl font-bold text-gradient">15+</div>
                 <div className="text-sm text-foreground-muted">Projects Built</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">3+</div>
+                <div className="text-3xl font-bold text-gradient">1+</div>
                 <div className="text-sm text-foreground-muted">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">100%</div>
-                <div className="text-sm text-foreground-muted">Client Satisfaction</div>
+                <div className="text-3xl font-bold text-gradient">2000+</div>
+                <div className="text-sm text-foreground-muted">Hours in Code</div>
               </div>
             </div>
           </div>

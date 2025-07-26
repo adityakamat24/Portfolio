@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Calendar, Instagram } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,19 +37,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.chen.dev@gmail.com',
-      link: 'mailto:alex.chen.dev@gmail.com'
+      value: 'adityakamat007@gmail.com',
+      link: 'mailto:adityakamat007@gmail.com'
     },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
-    },
+    
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Stony Brook, NY',
       link: null
     }
   ];
@@ -58,19 +53,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/alexchen',
+      link: 'https://www.linkedin.com/in/adityakamat24/',
       color: 'hover:text-blue-400'
     },
     {
       icon: Github,
       label: 'GitHub',
-      link: 'https://github.com/alexchen',
+      link: 'https://github.com/adityakamat24',
       color: 'hover:text-gray-300'
     },
     {
-      icon: Twitter,
-      label: 'Twitter',
-      link: 'https://twitter.com/alexchen_dev',
+      icon: Instagram,
+      label: 'Instagram',
+      link: 'https://www.instagram.com/adityakamat24/',
       color: 'hover:text-blue-400'
     }
   ];
@@ -153,17 +148,12 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold">Quick Actions</h3>
                 <div className="space-y-3">
                   <Button variant="outline" className="btn-glass w-full justify-start" asChild>
-                    <a href="/resume.pdf" target="_blank">
+                    <a href="https://calendly.com/adityakamat007/schedule-a-call" target="_blank">
                       <Calendar className="mr-3 w-5 h-5" />
                       Schedule a Call
                     </a>
                   </Button>
-                  <Button variant="outline" className="btn-glass w-full justify-start" asChild>
-                    <a href="/resume.pdf" target="_blank">
-                      <Mail className="mr-3 w-5 h-5" />
-                      Download Resume
-                    </a>
-                  </Button>
+                  
                 </div>
               </div>
             </div>
@@ -176,7 +166,35 @@ const Contact = () => {
                 <CardTitle className="text-2xl">Send Me a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setIsSubmitting(true);
+
+                    const form = e.target as HTMLFormElement;
+                    const formData = new FormData(form);
+
+                    const response = await fetch('https://formspree.io/f/xwpqonjw', {
+                      method: 'POST',
+                      headers: {
+                        Accept: 'application/json',
+                      },
+                      body: formData,
+                    });
+
+                    const result = await response.json();
+
+                    if (result.ok || result.success) {
+                      toast.success('Message sent successfully!');
+                      setFormData({ name: '', email: '', message: '' });
+                    } else {
+                      toast.error('Failed to send. Please try again.');
+                    }
+
+                    setIsSubmitting(false);
+                  }}
+                  className="space-y-6"
+                >
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Name *
@@ -224,9 +242,9 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="btn-primary w-full group" 
+                  <Button
+                    type="submit"
+                    className="btn-primary w-full group"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -242,6 +260,8 @@ const Contact = () => {
                     )}
                   </Button>
                 </form>
+
+
 
                 <div className="mt-6 p-4 glass-card border-white/10">
                   <p className="text-sm text-foreground-muted">
