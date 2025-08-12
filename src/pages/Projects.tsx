@@ -51,7 +51,7 @@ const Projects = () => {
       description: "Reduced transformer inference latency using fused attention kernels written in Triton.",
       longDescription: "Developed custom fused attention kernels in Triton, integrated them into PyTorch, and profiled using NVProf and nvdisasm to optimize warp-level parallelism and memory coalescing. Packaged as a reusable extension for future model deployment pipelines.",
       skills: ["Triton", "PyTorch", "CUDA", "Kernel Optimization", "Profiling", "Transformer Inference"],
-      github: "https://github.com/adityakamat24/triton-transformer-inference",
+      github: "https://github.com/adityakamat24/triton-fast-mha",
       image: "/images/Custom Triton Kernels for Inference.png"
     },
     {
